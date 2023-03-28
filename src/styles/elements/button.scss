@@ -1,0 +1,46 @@
+.app-button {
+    outline: none;
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.375;
+    border-radius: var(--radius-xxs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    cursor: pointer;
+    border: 1px solid transparent;
+
+    &--success {
+        color: var(--text-light);
+        background: var(--bg-button-success);
+
+        &:hover,
+        &:focus {
+            background: var(--bg-button-success-hover);
+        }
+
+        &:active {
+            background: var(--bg-button-success-active);
+        }
+    }
+
+    &--secondary {
+        color: var(--text-primary);
+        border-color: var(--line-secondary);
+        background: var(--bg-button-secondary);
+
+        &:hover,
+        &:focus {
+            background: var(--bg-button-secondary-hover);
+        }
+
+        &:active {
+            background: var(--bg-button-secondary-active);
+        }
+    }
+
+    &[disabled],
+    &.disabled {
+        cursor: default;
+        opacity: 0.5;
+    }
+}

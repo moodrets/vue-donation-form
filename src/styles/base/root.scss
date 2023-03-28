@@ -1,0 +1,50 @@
+:root {
+    // sizes
+    --container-width: 1224px;
+
+    // shadows
+    --shadow-block: 1px 3px 3px rgba(62, 63, 64, 0.1);
+
+    // spacings
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    // radius
+    --radius-xxs: 6px;
+    --radius-xs: 8px;
+
+    // colors
+    --bg-body: #f7f7f7;
+    --bg-light: #ffffff;
+    --bg-neutral: #fafafa;
+    --bg-success: #2eb670;
+    --bg-secondary: #f3f3f3;
+    --bg-info: #fffbec;
+
+    --bg-button-success: #2eb670;
+    --bg-button-success-hover: #{darken(#2eb670, 5%)};
+    --bg-button-success-active: #{darken(#2eb670, 10%)};
+    --bg-button-secondary: #fff;
+    --bg-button-secondary-hover: #{darken(#fff, 5%)};
+    --bg-button-secondary-active: #{darken(#fff, 10%)};
+
+    --line-base: #dbdcde;
+    --line-secondary: #a9abae;
+
+    --text-light: #fff;
+    --text-dark: #000;
+    --text-success: #00a651;
+    --text-accent: #009ffd;
+    --text-link: #6665dd;
+    --text-link-hover: #{lighten(#6665dd, 5%)};
+    --text-primary: #2f2f30;
+    --text-neutral: #6c6d6f;
+}
+
+$screen-sm: 480px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1366px;

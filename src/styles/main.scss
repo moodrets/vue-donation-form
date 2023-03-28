@@ -1,1 +1,10 @@
+// base
 @import './base/normalize.scss';
+@import './base/fonts.scss';
+@import './base/root.scss';
+@import './base/defaults.scss';
+
+// elements
+@import './elements/container.scss';
+@import './elements/block.scss';
+@import './elements/button.scss';

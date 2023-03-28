@@ -1,8 +1,9 @@
 const path = require('path')
+const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
+const CopyPlugin = require('copy-webpack-plugin')
 
 const isDev = process.argv.includes('development')
 const isProd = process.argv.includes('production')
@@ -66,7 +67,7 @@ module.exports = {
             filename: '[name].bundle.css',
         }),
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: './src/index.html',
         }),
         new webpack.DefinePlugin({
             __VUE_OPTIONS_API__: true,
@@ -74,6 +75,9 @@ module.exports = {
         }),
         new webpack.WatchIgnorePlugin({
             paths: [/\.js$/],
+        }),
+        new CopyPlugin({
+            patterns: [{ from: 'src/assets/svg-sprite.svg', to: '' }],
         }),
     ],
     devServer: {

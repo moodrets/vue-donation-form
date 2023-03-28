@@ -1,0 +1,7 @@
+.app-container {
+    max-width: calc(var(--container-width) + var(--spacing-md) + var(--spacing-md));
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    margin-left: auto;
+    margin-right: auto;
+}

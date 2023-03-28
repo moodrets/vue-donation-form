@@ -1,0 +1,27 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    background: var(--bg-body);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.app-wrapper {
+    padding-top: 54px;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+a {
+    color: var(--text-link);
+
+    &:hover,
+    &:focus {
+        color: var(--text-link-hover);
+    }
+}
