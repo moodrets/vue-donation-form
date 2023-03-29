@@ -1,6 +1,11 @@
 :root {
+    // transitions
+    --transiton-general: all 0.2s ease-in-out;
+
     // sizes
     --container-width: 1224px;
+    --body-min-width: 375px;
+    --aside-width: 264px;
 
     // shadows
     --shadow-block: 1px 3px 3px rgba(62, 63, 64, 0.1);
@@ -11,6 +16,7 @@
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --spacing-xl: 32px;
+    --spacing-xxl: 40px;
 
     // radius
     --radius-xxs: 6px;
@@ -33,6 +39,8 @@
 
     --line-base: #dbdcde;
     --line-secondary: #a9abae;
+    --line-accent: #009ffd;
+    --line-success: #00a651;
 
     --text-light: #fff;
     --text-dark: #000;
@@ -42,9 +50,6 @@
     --text-link-hover: #{lighten(#6665dd, 5%)};
     --text-primary: #2f2f30;
     --text-neutral: #6c6d6f;
-}
 
-$screen-sm: 480px;
-$screen-md: 768px;
-$screen-lg: 1024px;
-$screen-xl: 1366px;
+    --icons-secondary: #6c6d6f;
+}

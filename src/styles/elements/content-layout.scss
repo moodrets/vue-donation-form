@@ -1,0 +1,27 @@
+.app-content-layout {
+    position: relative;
+
+    @media (min-width: $screen-lg) {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__main {
+        @media (min-width: $screen-lg) {
+            flex: 1;
+            order: 0;
+            min-width: 0;
+        }
+    }
+
+    &__aside {
+        @media (min-width: $screen-lg) {
+            position: sticky;
+            top: var(--spacing-md);
+            flex: none;
+            order: 1;
+            width: var(--aside-width);
+            margin-left: var(--spacing-lg);
+        }
+    }
+}

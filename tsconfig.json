@@ -5,9 +5,9 @@
         "allowJs": true,
         "baseUrl": ".",
         "resolveJsonModule": true,
-        "outDir": "./dist/build",
+        "outDir": "./dist",
         "paths": {
-            "~/*": ["src/*"]
+            "@/*": ["src/*"]
         },
         "typeRoots": ["./node_modules/@types", "./node_modules/vuetify/types"],
         "lib": ["es2017", "dom"],

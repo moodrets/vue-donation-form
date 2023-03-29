@@ -5,17 +5,23 @@
                 <h1 class="app-block__title">Donations</h1>
             </div>
             <div class="app-block__body">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, molestias ratione iure
-                    possimus maxime eaque deleniti sint cupiditate eum rem in labore sequi cumque laboriosam officia
-                    assumenda doloribus quibusdam rerum!
-                </p>
-                <button class="app-button app-button--success">Save changes</button>
-                <br />
-                <button class="app-button app-button--secondary">Cancel</button>
+                <Filter></Filter>
             </div>
+        </section>
+        <section class="app-content-layout">
+            <aside class="app-content-layout__aside">
+                <Aside></Aside>
+            </aside>
+            <main class="app-content-layout__main">
+                <Tabs></Tabs>
+            </main>
         </section>
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Filter from '@/components/donation/Filter.vue'
+import Info from '@/components/donation/Info.vue'
+import Aside from '@/components/donation/Aside.vue'
+import Tabs from '@/components/donation/Tabs.vue'
+</script>

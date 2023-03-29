@@ -1,0 +1,23 @@
+$screen-sm: 480px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1366px;
+
+@mixin customs-scrollbar {
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--line-base);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--bg-success);
+        border-radius: var(--radius-xs);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+    }
+}
