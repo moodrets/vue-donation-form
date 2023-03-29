@@ -1,5 +1,11 @@
 <template>
-    <div class="svg-icon">
+    <a :href="props.link || '#'" v-if="props.tag === 'a'" class="svg-icon">
+        <svg>
+            <use :xlink:href="`${svgSpritePath}#${name}`"></use>
+        </svg>
+    </a>
+    <button v-else-if="props.tag === 'button'" class="svg-icon"></button>
+    <div v-else class="svg-icon">
         <svg>
             <use :xlink:href="`${svgSpritePath}#${name}`"></use>
         </svg>
@@ -9,13 +15,16 @@
 <script lang="ts" setup>
 const svgSpritePath = '/svg-sprite.svg'
 
-defineProps({
-    name: String,
-})
+const props = defineProps<{
+    name: String
+    tag?: 'a' | 'button'
+    link?: string
+}>()
 </script>
 
 <style lang="scss">
 .svg-icon {
+    display: flex;
     width: 24px;
     height: 24px;
     fill: currentColor;
@@ -47,6 +56,11 @@ defineProps({
         width: inherit;
         height: inherit;
         fill: inherit;
+    }
+
+    &:focus-visible {
+        outline-offset: 2px;
+        outline: 1px dashed currentColor;
     }
 }
 </style>

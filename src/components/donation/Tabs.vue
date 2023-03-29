@@ -1,10 +1,10 @@
 <template>
     <form class="app-block" @submit.prevent="onSubmit($event)">
-        <div class="app-tabs" v-if="tabs.length">
-            <div class="app-tabs__titles">
+        <div class="tabs" v-if="tabs.length">
+            <div class="tabs__titles">
                 <button
                     type="button"
-                    class="app-tabs__titles-item"
+                    class="tabs__titles-item"
                     v-for="tab in tabs"
                     :class="{ 'is-active': tab.active }"
                     :key="tab.name"
@@ -13,16 +13,16 @@
                     {{ tab.title }}
                 </button>
             </div>
-            <div class="app-tabs__bodies">
+            <div class="tabs__bodies">
                 <template v-for="tab in tabs" :key="tab.name">
-                    <div class="app-tabs__bodies-item" v-show="tab.active">
+                    <div class="tabs__bodies-item" v-show="tab.active">
                         <component :is="tab.component"></component>
                     </div>
                 </template>
             </div>
         </div>
         <div class="app-block__footer">
-            <div class="app-tabs__form-buttons">
+            <div class="tabs__form-buttons">
                 <button type="submit" class="app-button app-button--success">Save changes</button>
                 <button type="button" class="app-button app-button--secondary">Cancel</button>
             </div>
@@ -82,10 +82,10 @@ const tabChange = (tabItem: TabItem) => {
 const onSubmit = (event: Event) => {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/styles/base/vars.scss';
 
-.app-tabs {
+.tabs {
     &__titles {
         position: relative;
         z-index: 2;
@@ -105,13 +105,14 @@ const onSubmit = (event: Event) => {}
         line-height: 20px;
         text-transform: uppercase;
         color: var(--text-primary);
-        padding: 14px var(--spacing-md);
+        padding: 10px var(--spacing-md);
         border: 1px solid transparent;
         border-bottom: none;
         transition: var(--transiton-general);
         border-radius: var(--radius-xxs) var(--radius-xxs) 0 0;
         background: transparent;
         outline: none;
+        letter-spacing: 0.2px;
 
         &:focus {
             border-color: var(--line-base);
@@ -132,7 +133,7 @@ const onSubmit = (event: Event) => {}
     }
 
     &__bodies-item {
-        padding: var(--spacing-xxl) var(--spacing-xl);
+        padding: var(--spacing-xxl) var(--spacing-xl) 33px;
     }
 
     &__form-buttons {

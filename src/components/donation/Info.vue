@@ -11,11 +11,11 @@
                     <div class="donation-info__sum-conversion">≈ €17.92 EUR</div>
                 </div>
             </div>
-            <div class="donation-info__header-part-end">
+            <div class="donation-info__header-part-end font-secondary">
                 <div class="donation-info__id-label">ID</div>
                 <div class="donation-info__id-value">
                     <div>TYNY694Y</div>
-                    <SvgIcon name="copy" class="svg-icon--stroke ml"></SvgIcon>
+                    <SvgIcon name="copy" tag="a" class="svg-icon--stroke ml"></SvgIcon>
                 </div>
             </div>
         </div>
@@ -59,6 +59,7 @@ import SvgIcon from '@/components/common/SvgIcon.vue'
         }
 
         &-part-end {
+            margin-right: -1px;
             margin-bottom: var(--spacing-xl);
 
             @media (min-width: $screen-md) {
@@ -96,7 +97,7 @@ import SvgIcon from '@/components/common/SvgIcon.vue'
             font-size: 24px;
             line-height: 1.33;
             color: var(--text-success);
-            margin-right: var(--spacing-xs);
+            margin-right: 9px;
         }
 
         &-conversion {
@@ -104,6 +105,7 @@ import SvgIcon from '@/components/common/SvgIcon.vue'
             font-size: 16px;
             line-height: 1.5;
             color: var(--text-neutral);
+            padding-bottom: 2px;
         }
     }
 
@@ -112,12 +114,16 @@ import SvgIcon from '@/components/common/SvgIcon.vue'
         font-weight: 400;
         font-size: 16px;
         line-height: 1.5;
+        margin-top: -2px;
+        margin-bottom: 2px;
     }
 
     &__id-value {
         display: flex;
         align-items: center;
-        margin-top: 4px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
 
         .svg-icon {
             cursor: pointer;
@@ -137,10 +143,16 @@ import SvgIcon from '@/components/common/SvgIcon.vue'
             font-weight: 400;
             font-size: 16px;
             line-height: 24px;
-            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
 
             @media (min-width: $screen-md) {
                 padding-right: var(--spacing-xl);
+                padding-bottom: 0;
+                margin-bottom: var(--spacing-md);
+
+                &:first-child {
+                    padding-right: 13px;
+                }
             }
         }
 
@@ -151,7 +163,7 @@ import SvgIcon from '@/components/common/SvgIcon.vue'
             @media (min-width: $screen-md) {
                 border-top: none;
                 padding-top: 0;
-                padding-left: var(--spacing-xl);
+                padding-left: 31px;
                 border-left: 1px solid var(--line-base);
             }
         }
@@ -161,13 +173,19 @@ import SvgIcon from '@/components/common/SvgIcon.vue'
             font-size: 14px;
             line-height: 20px;
             color: var(--text-neutral);
-            margin-bottom: 2px;
+            margin-top: -1px;
+            padding-bottom: 2px;
         }
     }
 
     &__status {
         display: flex;
         align-items: center;
+
+        .svg-icon {
+            width: 18px;
+            height: 18px;
+        }
 
         &--success {
             color: var(--text-success);

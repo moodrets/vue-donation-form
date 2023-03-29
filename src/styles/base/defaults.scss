@@ -13,6 +13,7 @@ body {
 
 .app-wrapper {
     padding-top: 54px;
+    padding-bottom: 192px;
 }
 
 [v-cloak] {
@@ -26,4 +27,17 @@ a:not([class]) {
     &:focus {
         color: var(--text-link-hover);
     }
+
+    &:focus-visible {
+        outline-offset: 2px;
+        outline: 1px dashed currentColor;
+    }
+}
+
+.font-base {
+    font-family: 'Work Sans', sans-serif;
+}
+
+.font-secondary {
+    font-family: 'Source Code Pro', monospace;
 }

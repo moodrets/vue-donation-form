@@ -1,5 +1,5 @@
 <template>
-    <fieldset class="app-form-field app-form-field--limit-width app-form-field--row">
+    <div class="app-form-field app-form-field--limit-width app-form-field--row">
         <div class="app-form-field__label">Designation</div>
         <div class="app-form-field__content">
             <div class="app-custom-select">
@@ -9,13 +9,13 @@
                     <option value="Match Checkout Setting 3">Match Checkout Setting 3</option>
                 </select>
                 <div class="app-custom-select__value">
-                    <span>{{ selectMatchModel }}</span>
+                    {{ selectMatchModel }}
                     <SvgIcon name="arrow-down" class="svg-icon--stroke"></SvgIcon>
                 </div>
             </div>
         </div>
-    </fieldset>
-    <fieldset class="app-form-field app-form-field--limit-width app-form-field--row">
+    </div>
+    <div class="app-form-field app-form-field--limit-width app-form-field--row">
         <div class="app-form-field__label">Goal</div>
         <div class="app-form-field__content app-form-field__content--row">
             <input type="text" class="app-form-control" :value="inputAmountCurrency.value" />
@@ -26,18 +26,18 @@
                     <option value="RUB">RUB</option>
                 </select>
                 <div class="app-custom-select__value">
-                    <span>{{ selectCurrency }}</span>
+                    {{ selectCurrency }}
                     <SvgIcon name="arrow-down" class="svg-icon--stroke"></SvgIcon>
                 </div>
             </div>
         </div>
-    </fieldset>
-    <fieldset class="app-form-field app-form-field--row">
+    </div>
+    <div class="app-form-field app-form-field--row">
         <div class="app-form-field__label app-form-field__label--top">Default Amount</div>
         <div class="app-form-field__content">
             <div class="app-form-field app-form-field--radio">
                 <div class="app-custom-radio">
-                    <input type="radio" name="amount" id="amout_radio_1" checked />
+                    <input type="radio" name="amount" id="amout_radio_1" />
                     <div class="app-custom-radio__label">
                         <SvgIcon name="radio"></SvgIcon>
                     </div>
@@ -46,7 +46,7 @@
             </div>
             <div class="app-form-field app-form-field--radio">
                 <div class="app-custom-radio">
-                    <input type="radio" name="amount" id="amout_radio_2" />
+                    <input type="radio" name="amount" id="amout_radio_2" checked />
                     <div class="app-custom-radio__label">
                         <SvgIcon name="radio"></SvgIcon>
                     </div>
@@ -65,21 +65,21 @@
                 </label>
             </div>
         </div>
-    </fieldset>
-    <fieldset class="app-form-field app-form-field--row app-form-field--items-center">
+    </div>
+    <div class="app-form-field app-form-field--row app-form-field--ppf app-form-field--items-center">
         <div class="app-form-field__label">Border size</div>
         <div class="app-form-field__content app-form-field__content--row">
-            <input type="range" class="app-custom-range" min="0" step="1" max="4" v-model="rangeBorderSize" />
+            <input type="range" class="app-custom-range" min="0" step="1" max="3" v-model="rangeBorderSize" />
             <div class="app-form-field__content-info">{{ rangeBorderSize }}px</div>
         </div>
-    </fieldset>
-    <fieldset class="app-form-field app-form-field--row app-form-field--items-center">
+    </div>
+    <div class="app-form-field app-form-field--row app-form-field--items-center">
         <div class="app-form-field__label">Border radius</div>
         <div class="app-form-field__content app-form-field__content--row">
-            <input type="range" class="app-custom-range" min="0" step="1" max="32" v-model="rangeBorderRadius" />
+            <input type="range" class="app-custom-range" min="0" step="1" max="22" v-model="rangeBorderRadius" />
             <div class="app-form-field__content-info">{{ rangeBorderRadius }}px</div>
         </div>
-    </fieldset>
+    </div>
 </template>
 
 <script lang="ts" setup>
@@ -88,24 +88,24 @@ import { computed, ref } from 'vue'
 
 const selectMatchModel = ref<string>('Match Checkout Setting')
 const selectCurrency = ref<string>('USD')
-const inputAmount = ref<string>('10')
+const inputAmount = ref<string>('10.00')
 
 const rangeBorderSize = ref<string>('2')
-const rangeBorderRadius = ref<string>('10')
+const rangeBorderRadius = ref<string>('15')
 
 const inputAmountCurrency = computed(() => {
     inputAmount.value = inputAmount.value.replace(/[\$|€|₽|\s]/g, '')
 
     if (selectCurrency.value === 'USD') {
-        inputAmount.value = `$ ${inputAmount.value}`
+        inputAmount.value = `$${inputAmount.value}`
     }
 
     if (selectCurrency.value === 'EUR') {
-        inputAmount.value = `€ ${inputAmount.value}`
+        inputAmount.value = `€${inputAmount.value}`
     }
 
     if (selectCurrency.value === 'RUB') {
-        inputAmount.value = `₽ ${inputAmount.value}`
+        inputAmount.value = `₽${inputAmount.value}`
     }
 
     return inputAmount
@@ -116,15 +116,8 @@ const inputAmountCurrency = computed(() => {
 @import '@/styles/base/vars.scss';
 
 .app-form-field {
-    &__label {
-        @media (min-width: $screen-md) {
-            width: 140px;
-            text-align: right;
-        }
-    }
-
     &--limit-width {
-        max-width: 398px;
+        max-width: 464px;
     }
 }
 </style>

@@ -32,21 +32,10 @@
     line-height: 24px;
     margin-bottom: var(--spacing-lg);
 
-    &:last-child,
-    &:last-of-type {
-        margin-bottom: 0;
-    }
-
     &__label {
         display: block;
         margin-bottom: var(--spacing-xs);
         word-break: break-all;
-    }
-
-    &__content {
-        .app-custom-select {
-            display: block;
-        }
     }
 
     &__content-info {
@@ -69,7 +58,7 @@
         }
 
         .app-custom-select {
-            min-width: 88px;
+            min-width: 81px;
         }
     }
 
@@ -77,6 +66,10 @@
         @media (min-width: $screen-md) {
             display: flex;
             align-items: flex-start;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
         }
     }
 
@@ -87,7 +80,8 @@
 
     &--row &__label {
         @media (min-width: $screen-md) {
-            flex: none;
+            flex: 0 0 151px;
+            text-align: right;
             margin-right: var(--spacing-md);
             margin-top: var(--spacing-xs);
         }
@@ -108,6 +102,15 @@
     &--radio {
         display: flex;
         align-items: center;
+        margin-bottom: 18.5px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &--ppf {
+        margin-bottom: 8px;
     }
 }
 
@@ -117,7 +120,7 @@
     font-size: 16px;
     line-height: 22px;
     color: var(--text-primary);
-    display: inline-block;
+    display: block;
     max-width: 100%;
 
     select {
@@ -138,22 +141,15 @@
 
     &__value {
         position: relative;
-        display: flex;
-        align-items: center;
         border: 1px solid var(--line-secondary);
         padding: var(--spacing-xs) var(--spacing-sm);
-        padding-right: var(--spacing-xxl);
+        padding-right: var(--spacing-xl);
         border-radius: var(--radius-xxs);
         transition: var(--transiton-general);
-
-        span {
-            flex: 1;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            min-width: 0;
-            max-width: 100%;
-        }
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
 
         .svg-icon {
             width: 28px;
@@ -161,7 +157,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            right: 4px;
+            right: 3px;
         }
     }
 

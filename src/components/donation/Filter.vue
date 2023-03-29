@@ -12,7 +12,7 @@
                     <option value="Rejected">Rejected</option>
                 </select>
                 <div class="app-custom-select__value">
-                    <span>{{ selectValue }}</span>
+                    {{ selectValue }}
                     <SvgIcon name="arrow-down" class="svg-icon--stroke"></SvgIcon>
                 </div>
             </div>
@@ -70,10 +70,14 @@ const selectValue = ref<string>('All statuses')
         @media (min-width: $screen-md) {
             margin-top: 0;
         }
+
+        &__value {
+            padding-left: 10px;
+        }
     }
 
     .app-form-control {
-        padding-left: 42px;
+        padding-left: 40px;
 
         &:not(:focus) {
             border-color: var(--line-base);
