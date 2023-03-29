@@ -13,6 +13,7 @@
                 <Aside></Aside>
             </aside>
             <main class="app-content-layout__main">
+                <Info></Info>
                 <Tabs></Tabs>
             </main>
         </section>

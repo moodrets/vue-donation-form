@@ -37,6 +37,11 @@ defineProps({
         }
     }
 
+    &--standalone {
+        fill: none;
+        stroke: none;
+    }
+
     svg {
         display: block;
         width: inherit;
