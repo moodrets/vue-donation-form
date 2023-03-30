@@ -4,7 +4,11 @@
             <use :xlink:href="`${svgSpritePath}#${name}`"></use>
         </svg>
     </a>
-    <button v-else-if="props.tag === 'button'" class="svg-icon"></button>
+    <button type="button" v-else-if="props.tag === 'button'" class="svg-icon">
+        <svg>
+            <use :xlink:href="`${svgSpritePath}#${name}`"></use>
+        </svg>
+    </button>
     <div v-else class="svg-icon">
         <svg>
             <use :xlink:href="`${svgSpritePath}#${name}`"></use>
@@ -29,6 +33,10 @@ const props = defineProps<{
     height: 24px;
     fill: currentColor;
     flex: none;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
 
     &.mr {
         margin-right: var(--spacing-xs);

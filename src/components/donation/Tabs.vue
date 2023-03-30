@@ -1,8 +1,9 @@
 <template>
-    <form class="app-block" @submit.prevent="onSubmit($event)">
+    <form class="app-block" @submit.prevent="onSubmit($event)" role="tablist">
         <div class="tabs" v-if="tabs.length">
             <div class="tabs__titles">
                 <button
+                    role="tab"
                     type="button"
                     class="tabs__titles-item"
                     v-for="tab in tabs"
@@ -15,7 +16,7 @@
             </div>
             <div class="tabs__bodies">
                 <template v-for="tab in tabs" :key="tab.name">
-                    <div class="tabs__bodies-item" v-show="tab.active">
+                    <div class="tabs__bodies-item" v-show="tab.active" role="tabpanel">
                         <component :is="tab.component"></component>
                     </div>
                 </template>

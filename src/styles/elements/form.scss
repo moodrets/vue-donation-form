@@ -33,7 +33,8 @@
     margin-bottom: var(--spacing-lg);
 
     &__label {
-        display: block;
+        display: inline-block;
+        vertical-align: top;
         margin-bottom: var(--spacing-xs);
         word-break: break-all;
     }

@@ -1,5 +1,5 @@
 <template>
-    <div class="app-block">
+    <nav class="app-block">
         <ul class="common-list">
             <li>
                 <a href="#" class="common-list__item">
@@ -26,5 +26,5 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </nav>
 </template>

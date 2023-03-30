@@ -1,5 +1,6 @@
 <template>
     <section class="donation-info app-block">
+        <h2 class="visually-hidden">Donation info</h2>
         <div class="app-block__header donation-info__header">
             <div class="donation-info__header-part-start">
                 <div class="donation-info__label">
@@ -15,7 +16,7 @@
                 <div class="donation-info__id-label">ID</div>
                 <div class="donation-info__id-value">
                     <div>TYNY694Y</div>
-                    <SvgIcon name="copy" tag="a" class="svg-icon--stroke ml"></SvgIcon>
+                    <SvgIcon name="copy" tag="button" class="svg-icon--stroke ml" aria-label="copy id"></SvgIcon>
                 </div>
             </div>
         </div>
@@ -23,18 +24,19 @@
             <div class="donation-info__columns">
                 <div class="donation-info__columns-item">
                     <div class="donation-info__columns-label">Status</div>
-                    <div class="donation-info__status donation-info__status--success">
+                    <div class="donation-info__status donation-info__status--success" tabindex="0">
                         <SvgIcon name="success" class="svg-icon--standalone mr"></SvgIcon>
+                        <span class="visually-hidden">status</span>
                         <div>Succeeded</div>
                     </div>
                 </div>
                 <div class="donation-info__columns-item">
                     <div class="donation-info__columns-label">Supporter</div>
-                    <a href="#">Charlotte Ann</a>
+                    <a href="#"><span class="visually-hidden">Supporter</span>Charlotte Ann</a>
                 </div>
                 <div class="donation-info__columns-item">
                     <div class="donation-info__columns-label">Campaign</div>
-                    <a href="#">Heart walk</a>
+                    <a href="#"><span class="visually-hidden">Campaign</span>Heart walk</a>
                 </div>
             </div>
         </div>
@@ -59,7 +61,7 @@ import SvgIcon from '@/components/common/SvgIcon.vue'
         }
 
         &-part-end {
-            margin-right: -1px;
+            margin-right: -2px;
             margin-bottom: var(--spacing-xl);
 
             @media (min-width: $screen-md) {
@@ -97,7 +99,8 @@ import SvgIcon from '@/components/common/SvgIcon.vue'
             font-size: 24px;
             line-height: 1.33;
             color: var(--text-success);
-            margin-right: 9px;
+            margin-right: var(--spacing-xs);
+            letter-spacing: 0.12px;
         }
 
         &-conversion {
@@ -189,6 +192,11 @@ import SvgIcon from '@/components/common/SvgIcon.vue'
 
         &--success {
             color: var(--text-success);
+        }
+
+        &:focus-visible {
+            outline-offset: 2px;
+            outline: 1px dashed currentColor;
         }
     }
 }

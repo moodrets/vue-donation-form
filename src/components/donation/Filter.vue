@@ -2,7 +2,7 @@
     <div class="app-filter">
         <form class="app-filter__form" @submit.prevent="onSubmit($event)">
             <div class="app-filter__search">
-                <input type="text" class="app-form-control" placeholder="Search" />
+                <input type="search" name="search" autocomplete="off" class="app-form-control" placeholder="Search" />
                 <SvgIcon name="search" class="svg-icon--stroke"></SvgIcon>
             </div>
             <div class="app-custom-select app-custom-select--simple">
