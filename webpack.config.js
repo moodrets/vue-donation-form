@@ -34,6 +34,16 @@ module.exports = {
                 use: 'vue-loader',
             },
             {
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [['@babel/preset-env', { targets: 'defaults' }]],
+                    },
+                },
+            },
+            {
                 test: /\.tsx?$/,
                 loader: 'ts-loader',
                 options: {
