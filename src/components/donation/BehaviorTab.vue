@@ -74,12 +74,15 @@
                     id="range_border_size"
                     type="range"
                     class="app-custom-range"
-                    min="0"
-                    step="1"
-                    max="3"
-                    v-model="rangeBorderSize"
+                    v-model="rangeBorderSizeData.value"
+                    :min="rangeBorderSizeData.min"
+                    :max="rangeBorderSizeData.max"
+                    :step="rangeBorderSizeData.step"
+                    :style="{
+                        '--range-color': (rangeBorderSizeData.value / rangeBorderSizeData.max) * 100 + '%',
+                    }"
                 />
-                <div class="app-form-field__content-info">{{ rangeBorderSize }}px</div>
+                <div class="app-form-field__content-info">{{ rangeBorderSizeData.value }}px</div>
             </div>
         </div>
         <div class="app-form-field app-form-field--row app-form-field--items-center">
@@ -89,12 +92,15 @@
                     id="range_border_radius"
                     type="range"
                     class="app-custom-range"
-                    min="0"
-                    step="1"
-                    max="22"
-                    v-model="rangeBorderRadius"
+                    v-model="rangeBorderRadiusData.value"
+                    :min="rangeBorderRadiusData.min"
+                    :max="rangeBorderRadiusData.max"
+                    :step="rangeBorderRadiusData.step"
+                    :style="{
+                        '--range-color': (rangeBorderRadiusData.value / rangeBorderRadiusData.max) * 100 + '%',
+                    }"
                 />
-                <div class="app-form-field__content-info">{{ rangeBorderRadius }}px</div>
+                <div class="app-form-field__content-info">{{ rangeBorderRadiusData.value }}px</div>
             </div>
         </div>
     </form>
@@ -108,8 +114,19 @@ const selectMatchModel = ref<string>('Match Checkout Setting')
 const selectCurrency = ref<string>('USD')
 const inputAmount = ref<string>('10.00')
 
-const rangeBorderSize = ref<string>('2')
-const rangeBorderRadius = ref<string>('15')
+const rangeBorderSizeData = ref({
+    step: 1,
+    min: 0,
+    max: 3,
+    value: 2,
+})
+
+const rangeBorderRadiusData = ref({
+    step: 1,
+    min: 0,
+    max: 22,
+    value: 15,
+})
 
 const inputAmountCurrency = computed(() => {
     inputAmount.value = inputAmount.value.replace(/[\$|€|₽|\s]/g, '')

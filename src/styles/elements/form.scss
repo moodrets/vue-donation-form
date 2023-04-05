@@ -44,18 +44,11 @@
     }
 
     &__content--row {
-        @media (min-width: $screen-sm) {
-            display: flex;
-            align-items: center;
-        }
+        display: flex;
+        align-items: center;
 
         > * + * {
-            margin-top: var(--spacing-xs);
-
-            @media (min-width: $screen-sm) {
-                margin-top: 0;
-                margin-left: var(--spacing-lg);
-            }
+            margin-left: var(--spacing-lg);
         }
 
         .app-custom-select {
@@ -170,6 +163,7 @@
 }
 
 .app-custom-range {
+    --range-color: 0%;
     -webkit-appearance: none;
     appearance: none;
     background: transparent;
@@ -181,13 +175,21 @@
     }
 
     &::-webkit-slider-runnable-track {
-        background-color: var(--line-success);
+        background: linear-gradient(
+            to right,
+            var(--line-success) var(--range-color),
+            var(--line-base) var(--range-color)
+        );
         border-radius: 24px;
         height: 3px;
     }
 
     &::-moz-range-track {
-        background-color: var(--line-success);
+        background: linear-gradient(
+            to right,
+            var(--line-success) var(--range-color),
+            var(--line-base) var(--range-color)
+        );
         border-radius: 24px;
         height: 3px;
     }
