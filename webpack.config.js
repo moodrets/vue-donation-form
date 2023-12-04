@@ -10,7 +10,7 @@ const isProd = process.argv.includes('production')
 const devServerPort = 4444
 const devtool = isDev ? 'source-map' : false
 
-module.exports = {
+module.exports = (env, argv) => ({
     cache: false,
     devtool,
     context: path.resolve(__dirname),
@@ -82,6 +82,7 @@ module.exports = {
         new webpack.DefinePlugin({
             __VUE_OPTIONS_API__: true,
             __VUE_PROD_DEVTOOLS__: false,
+            __WEBPACK_MODE__: JSON.stringify(argv.mode)
         }),
         new webpack.WatchIgnorePlugin({
             paths: [/\.js$/],
@@ -105,4 +106,4 @@ module.exports = {
     experiments: {
         topLevelAwait: true,
     },
-}
+})

@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts" setup>
-const svgSpritePath = '/svg-sprite.svg'
+const svgSpritePath = __WEBPACK_MODE__ === 'production' ? '/vue-donation-form/svg-sprite.svg' : '/svg-sprite.svg'
 
 const props = defineProps<{
     name: String
