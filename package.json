@@ -6,7 +6,9 @@
     "scripts": {
         "dev": "webpack serve --mode development",
         "watch": "webpack --mode development --watch",
-        "build": "webpack --mode production"
+        "build": "webpack --mode production",
+        "copy-404": "cd dist && cp index.html 404.html && cd ..",
+        "deploy": "npm run build && npm run copy-404 && gh-pages -d dist"
     },
     "keywords": [],
     "author": "retsdmitriy@gmail.com",
@@ -18,6 +20,7 @@
         "babel-loader": "^9.1.2",
         "copy-webpack-plugin": "^11.0.0",
         "css-loader": "^6.7.3",
+        "gh-pages": "^6.1.0",
         "html-webpack-plugin": "^5.5.0",
         "mini-css-extract-plugin": "^2.7.5",
         "sass": "^1.60.0",
